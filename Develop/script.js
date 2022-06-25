@@ -17,15 +17,19 @@ function promptMe(){
 
   let passwordLength = prompt("Choose a password length of at least 8 characters but no more than 128 characters");
 if (passwordLength>=8 && passwordLength<=128) {
-  promptMeAgain()
-} else {
-  window.alert("Invalid Entry")
+  let numberConfirm = confirm("Do you want numbers in your password?")
+  let specialCharacterConfirm = confirm("Do you want special characters in your password?")
+  let uppercaseConfirm = confirm("Do you want uppercase letters in your password?")
+  let lowercaseConfirm = confirm("Do you want lowercase letters in your password?")
+} else if (passwordLength<8){
+  alert("Too small")
+}
+else if (passwordLength>128){
+  alert("Too big")
 }
 }
 
-function promptMeAgain(){
-  
-}
+
 
 
 // promptMe()
