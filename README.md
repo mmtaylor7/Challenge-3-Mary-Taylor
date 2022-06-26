@@ -37,6 +37,8 @@ Code refactored to generate a random password based on user inputs by Mary Marga
 #### Deployment
 [Mary Margaret Taylor Generator](https://mmtaylor7.github.io/Challenge-3-Mary-Taylor/)
 
+##### GitHub Repository
 
+[Mary Margaret Taylor Repository](https://github.com/mmtaylor7/Challenge-3-Mary-Taylor)
 
 
