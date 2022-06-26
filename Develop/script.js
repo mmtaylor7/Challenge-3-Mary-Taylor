@@ -1,7 +1,9 @@
 
 
-var s = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
-
+let specialCharacters = `!"#$%&\'()*+,-.`;
+let upperCaseCharacters = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`;
+let lowerCaseCharacters = `abcdefghijklmnopqrstuvwxyz`;
+let numbers = `0123456789`;
 
 
 function writePassword() {
@@ -9,34 +11,9 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 }
 
-function getRandomLower() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
- 
-function getRandomUpper() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-
-function getRandomNumber() {
-	return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-
-function getRandomSymbol() {
-	const symbols = '!@#$%^&*(){}[]=<>/,.'
-	return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
 
 function generatePassword() {
-if (numberConfirm && symbolConfirm && uppercaseConfirm && lowercaseConfirm) {
-
   
-  getRandomLower() 
-  getRandomUpper()
-  getRandomNumber()
-  getRandomSymbol()
-
-  }
 }
  
 
