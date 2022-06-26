@@ -1,6 +1,6 @@
 
 
-let specialCharacters = `!"#$%&\'()*+,-.`;
+let symbols = `!"#$%&\'()*+,-.`;
 let upperCaseCharacters = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`;
 let lowerCaseCharacters = `abcdefghijklmnopqrstuvwxyz`;
 let numbers = `0123456789`;
@@ -11,10 +11,15 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 }
 
+//this funciton generates a password
+//what do i need to get it done? 
+//does it need to return something
 
-function generatePassword() {
+function generatePassword(length, number, symbol, uppercase, lowercase) {
   
 }
+
+
  
 
 // function myCoolFunction(a,b,c) {
@@ -46,7 +51,7 @@ function promptMe(){
       if (numberConfirm===false && symbolConfirm===false && uppercaseConfirm===false && lowercaseConfirm===false) {
         alert("You must select at least 1 character type: numbers, symbols, uppercase or lowercase. Go back to the beginning and try again.")
       } else {
-        generatePassword()
+        
         writePassword()
         console.log(writePassword());
       }
