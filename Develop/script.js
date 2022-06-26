@@ -4,11 +4,9 @@ let symbolsCharacters = `!"#$%&\'()*+,-.`;
 let upperCaseCharacters = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`;
 let lowerCaseCharacters = `abcdefghijklmnopqrstuvwxyz`;
 
-
-
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+function writePassword(passwordText) {
+  var passwordTextArea = document.querySelector("#password")
+  passwordTextArea.value = passwordText
 }
 
 function shuffleWord (word){
@@ -20,7 +18,7 @@ function shuffleWord (word){
   return shuffledWord;
 }
 
-function generatePassword(length, number, symbol, uppercase, lowercase) {
+function generatePassword(number, symbol, uppercase, lowercase) {
   let userPassword = ""
 
   if(number===true) {
@@ -38,7 +36,6 @@ function generatePassword(length, number, symbol, uppercase, lowercase) {
 
   return userPassword
 }
-
 
 function promptMe(){
       let passwordLength = prompt("Choose a password length of at least 8 characters but no more than 128 characters");
@@ -60,9 +57,11 @@ function promptMe(){
 
         const firstn = str.slice(0, passwordLength); 
 
+         writePassword(firstn)
+
         }
 
-        writePassword()
+        
 
         
     }
