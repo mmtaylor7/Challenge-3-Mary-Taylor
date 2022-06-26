@@ -11,15 +11,20 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 }
 
-//this funciton generates a password
-//what do i need to get it done? 
-//does it need to return something
+function shuffleWord (word){
+  var shuffledWord = '';
+  word = word.split('');
+  while (word.length > 0) {
+    shuffledWord +=  word.splice(word.length * Math.random() << 0, 1);
+  }
+  return shuffledWord;
+}
 
 function generatePassword(length, number, symbol, uppercase, lowercase) {
   let userPassword = ""
 
   if(number===true) {
-userPassword = userPassword + numbersCharacters
+    userPassword = userPassword + numbersCharacters
   }
   if(symbol===true) {
     userPassword = userPassword + symbolsCharacters
@@ -31,28 +36,8 @@ userPassword = userPassword + numbersCharacters
     userPassword = userPassword + lowerCaseCharacters
   }
 
-  console.log(userPassword)
+  return userPassword
 }
-
-
- 
-
-// function myCoolFunction(a,b,c) {
-//   var result = a + b + c;
-//   // 11
-// }
- 
-// let twentyValue = myCoolFunction(10,9,1)
-// let tenValue = myCoolFunction(3,4,3) 
-// let fiveValue = myCoolFunction(1,2,2) 
-
-
-
-// console.log("twentyValue: " + twentyValue)
-// console.log("tenValue: " + tenValue)
-// console.log("fiveValue: " + result)
- 
-
 
 
 function promptMe(){
@@ -67,12 +52,19 @@ function promptMe(){
         alert("You must select at least 1 character type: numbers, symbols, uppercase or lowercase. Go back to the beginning and try again.")
       } else {
 
-        generatePassword(passwordLength, numberConfirm, symbolConfirm, uppercaseConfirm, lowercaseConfirm)
+        let myNewPassword = generatePassword(passwordLength, numberConfirm, symbolConfirm, uppercaseConfirm, lowercaseConfirm)
+        
+        let shuffledWord = shuffleWord(myNewPassword)
+
+        const str = shuffledWord
+
+        const firstn = str.slice(0, passwordLength); 
+
+        }
 
         writePassword()
 
         
-      }
     }
     else if (passwordLength<8){
       alert("Too small")
