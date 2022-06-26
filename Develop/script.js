@@ -1,9 +1,9 @@
 
-
-let symbols = `!"#$%&\'()*+,-.`;
+let numbersCharacters = `0123456789`;
+let symbolsCharacters = `!"#$%&\'()*+,-.`;
 let upperCaseCharacters = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`;
 let lowerCaseCharacters = `abcdefghijklmnopqrstuvwxyz`;
-let numbers = `0123456789`;
+
 
 
 function writePassword() {
@@ -16,7 +16,22 @@ function writePassword() {
 //does it need to return something
 
 function generatePassword(length, number, symbol, uppercase, lowercase) {
-  
+  let userPassword = ""
+
+  if(number===true) {
+userPassword = userPassword + numbersCharacters
+  }
+  if(symbol===true) {
+    userPassword = userPassword + symbolsCharacters
+  }
+  if(uppercase===true) {
+    userPassword = userPassword + upperCaseCharacters
+  }
+  if(lowercase===true) {
+    userPassword = userPassword + lowerCaseCharacters
+  }
+
+  console.log(userPassword)
 }
 
 
@@ -51,9 +66,12 @@ function promptMe(){
       if (numberConfirm===false && symbolConfirm===false && uppercaseConfirm===false && lowercaseConfirm===false) {
         alert("You must select at least 1 character type: numbers, symbols, uppercase or lowercase. Go back to the beginning and try again.")
       } else {
-        
+
+        generatePassword(passwordLength, numberConfirm, symbolConfirm, uppercaseConfirm, lowercaseConfirm)
+
         writePassword()
-        console.log(writePassword());
+
+        
       }
     }
     else if (passwordLength<8){
